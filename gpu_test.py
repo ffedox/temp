@@ -9,11 +9,11 @@ Original file is located at
 
 import torch
 
-# If there's a GPU avaiable, tell PyTorch to use the GPU,
-# otherwise, using the CPU instead.
-if torch.cuda.is_available():
-  device = torch.device("cuda")
-  print('Found GPU:', torch.cuda.get_device_name(0))
-else:
-  device = torch.device("cpu")
-  print('CPU will be used because no GPU available.')
+def main():
+    if torch.cuda.is_available():
+        print("Great! PyTorch can access your GPU.")
+    else:
+        print("Oops! PyTorch cannot access your GPU.")
+
+if __name__ == "__main__":
+    main()
